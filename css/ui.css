@@ -1,0 +1,137 @@
+@import url("reset.css");
+
+/* ------ HTML5 Display Definitions ------ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+
+/* ------ Global ------ */
+
+#wrapper {
+    margin: 0 auto;
+    min-height: 500px;
+    overflow-x: hidden;
+    position: relative;
+    width: 960px;
+}
+
+#skip {
+    left: -100%;
+    position: fixed;
+    top: -100%;
+}
+
+#skip:focus {
+    background: #fff;
+    display: block;
+    left: 0px;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+}
+
+#focus {
+    display: none;
+}
+
+
+/* ------ Quiz ------ */
+
+#progress {
+    border: 1px solid #000;
+    height: 30px;
+    width: 958px;
+}
+
+#indicator {
+    background: olive;
+    height: 100%;
+    width: 0%;
+}
+
+#questions {
+    min-height: 500px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.question {
+    display: none;
+    left: 100%;
+    padding: 16px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.question.active {
+    display: block;
+    left: 0%;
+}
+
+.question img {
+    display: block;
+}
+
+.answer {
+    background: #ccc;
+    display: block;
+    float: left;
+    margin: 0 16px;
+    min-height: 200px;
+    width: 200px;
+}
+
+.question .answer img {
+    height: 200px;
+    width: 100%;
+}
+
+#results {
+    left: 100%;
+    position: absolute;
+    top: 87px;
+}
+
+
+/* ------ Utility ------ */
+
+.clear {
+    clear: both;
+}
+
+
+/* ------ Dimensions between mobile and tablet/desktop if needed ------ */
+
+@media only screen and (min-width: 321px) and (max-width: 959px) {}
