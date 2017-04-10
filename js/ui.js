@@ -3,75 +3,126 @@ var quizData = [
     {
         "question": "In your group you are the...",
         "image": "<?=$url;?>/images/quiz/",
-        "option1": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Fun one"
-        },
-        "option2": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Crazy One"
-        },
-        "option3": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Awkward one"
-        },
-        "option4": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Stable one"
-        }
+        "answerOptions": [
+
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "Fun one"
+            },
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "Crazy One"
+            },
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "Awkward one"
+            },
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "Stable one"
+            }
+        ]
+
     },
     {
         "question": "Which of these faces do you relate the most with?",
         "image": "<?=$url;?>/images/quiz/",
-        "option1": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Khalisi"
-        },
-        "option2": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Tina Fey"
-        },
-        "option3": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Rachel Green"
-        },
-        "option4": {
-            "image": "<?=$url;?>/images/quiz/",
-            "answer": "Tina Belcher"
-        }
+        "answerOptions": [
+
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "Khalisi"
+            },
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "Tina Fey"
+            }
+
+        ]
+
+    },
+    {
+        "question": "What do you do in akward situations?",
+        "image": "<?=$url;?>/images/quiz/",
+        "answerOptions": [
+
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "laugh it off and moon walk away"
+            },
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "do a dance"
+            },
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "say 'uhhhhhhh'"
+            }
+
+        ]
+
+    },
+    {
+        "question": "testing testing mctesty",
+        "image": "<?=$url;?>/images/quiz/",
+        "answerOptions": [
+
+            {
+                "image": "<?=$url;?>/images/quiz/",
+                "answer": "this is the only answer."
+            }
+
+        ]
+
     }
 
 ];
 
-console.log(quizData[0].option1.answer);
+console.log(quizData[1].answerOptions.length);
+
+for (var i = 0; i < quizData.length; i++) {
+    console.log(quizData[i].question);
+    for (var j = 0; j < quizData[i].answerOptions.length; j++) {
+        console.log(quizData[i].answerOptions[j].answer);
+    }
+    console.log("----------------------------");
+
+}
+
 $(document).ready(function() {
 
     // create all the question divs dynamically first... 
     for (i = 0; i < quizData.length; i++) {
-        var answer1 = $('<a href="answer1" class="answer">').html(quizData[i].option1.answer).append(answer1Img);
-        var answer1Img = $('<img src="' + quizData[i].option1.image + '">').attr("data-weight", "0").attr("alt", "");
 
-        var answer2 = $('<a href="answer2" class="answer">').html(quizData[i].option2.answer).append(answer2Img);
-        var answer2Img = $('<img src="' + quizData[i].option2.image + '">').attr("data-weight", "1").attr("alt", "");
+        // var answer1 = $('<a href="answer1" class="answer">').html(quizData[i].option1.answer).append(answer1Img);
+        // var answer1Img = $('<img src="' + quizData[i].option1.image + '">').attr("data-weight", "0").attr("alt", "");
 
-        var answer3 = $('<a href="answer3" class="answer">').html(quizData[i].option3.answer).append(answer3Img);
-        var answer3Img = $('<img src="' + quizData[i].option1.image + '">').attr("data-weight", "2").attr("alt", "");
+        // var answer2 = $('<a href="answer2" class="answer">').html(quizData[i].option2.answer).append(answer2Img);
+        // var answer2Img = $('<img src="' + quizData[i].option2.image + '">').attr("data-weight", "1").attr("alt", "");
 
-        var answer4 = $('<a href="answer4" class="answer">').html(quizData[i].option4.answer).append(answer4Img);
-        var answer4Img = $('<img src="' + quizData[i].option1.image + '">').attr("data-weight", "3").attr("alt", "");
+        // var answer3 = $('<a href="answer3" class="answer">').html(quizData[i].option3.answer).append(answer3Img);
+        // var answer3Img = $('<img src="' + quizData[i].option1.image + '">').attr("data-weight", "2").attr("alt", "");
 
-        var clearLine = $('<div class="clear">');
+        // var answer4 = $('<a href="answer4" class="answer">').html(quizData[i].option4.answer).append(answer4Img);
+        // var answer4Img = $('<img src="' + quizData[i].option1.image + '">').attr("data-weight", "3").attr("alt", "");
 
         var questionTitle = $('<h1>').html(quizData[i].question);
         var questionImg = $('<img src = "' + quizData[i].image + '" alt="Question ' + (i + 1) + '">');
+        var questionDiv = $('<div class="question">').append(questionTitle).append(questionImg);
+        var withClearDiv = $('<div class="clear">');
 
+        for (j = 0; j < quizData[i].answerOptions.length; j++) {
+            var answerCounter = j + 1;
+            var possibleAnswersImg = $('<img src="' + quizData[i].answerOptions[j].image + '" data-weight="' + j + '" alt="">');
+            var makePossibleAnswers = $('<a href="answer' + answerCounter + '" class="answer">').html(quizData[i].answerOptions[j].answer).prepend(possibleAnswersImg);
+            var fullDiv = questionDiv.append(makePossibleAnswers);
+        };
+        questionDiv = questionDiv.append(withClearDiv);
 
-        var questionDiv = $('<div class="question">').append(questionTitle).append(questionImg).append(answer1).append(answer2).append(answer3).append(answer4).append(clearLine);
-
-        $('#questions').append(questionDiv);
+        $('#questions').append(fullDiv);
 
         $('#questions div:first').addClass("active");
-        // $('#questions').html('hello');
+
     }
 
     "use strict";
