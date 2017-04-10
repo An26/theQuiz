@@ -15,13 +15,18 @@ include('includes/header.php');
 	
 	<div id="progress">
 	
-		<div id="indicator"></div><!--indicator-->
+		<div id="indicator"></div>
+		<!--indicator-->
 		
 		<div id="step">1 of 5</div>
 	
-	</div><!--progress-->
+	</div>
+	<!--progress bar-->
 
-	<div id="questions"></div>
+	<div id="questions">
+
+	</div>
+	<!--questions are dynamically added from an js object at the top of the ui.js file-->
 	
 	<div id="results">
 	
