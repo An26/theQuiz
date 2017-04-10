@@ -33,8 +33,8 @@ if($server == "dev.site.com") {
 	
 	$env = "local";
 	$lang = "en";
-	$url = "http://" . $server . ":8888/click-quiz";
-	$translate_url = "http://" . $server . ":8888/click-quiz?lang=es";
+	$url = "http://" . $server . ":8888/theQuiz";
+	$translate_url = "http://" . $server . ":8888/theQuiz?lang=es";
 	
 }
 

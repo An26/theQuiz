@@ -3,7 +3,7 @@
   Options +FollowSymLinks
   Options -Indexes
   RewriteEngine On
-  RewriteBase /click-quiz/
+  RewriteBase /theQuiz/
 
 # Add trailing slash to url
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -18,5 +18,5 @@
 # End of Apache Rewrite Rules
  </IfModule>
  
- ErrorDocument 403 /click-quiz/404/
- ErrorDocument 404 /click-quiz/404/
+ ErrorDocument 403 /theQuiz/404/
+ ErrorDocument 404 /theQuiz/404/

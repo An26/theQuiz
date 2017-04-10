@@ -83,7 +83,7 @@ if($env != "live") {
 <?php } ?>
 
 <link rel="shortcut icon" type="image/x-icon" href="<?=$url;?>/images/favicon.ico" />
-<link rel="stylesheet" media="all" href="<?=$url;?>/css/fonts.css" />
+<!--<link rel="stylesheet" media="all" href="<?=$url;?>/css/fonts.css" />-->
 <link rel="stylesheet" media="all" href="<?=$url;?>/css/ui.css?v=<?=$version;?>" />
 <link rel="stylesheet" media="all" href="<?=$url;?>/css/mobile.css?v=<?=$version;?>" />
 
